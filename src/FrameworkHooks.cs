@@ -13,8 +13,8 @@ namespace Optymus.SpecFlowExtension.FrameworkHooks
 			_featureContext = featureContext;
 		}
 
-		[BeforeFeature(Order = 0)]
-		public void BeforeFeature()
+		[BeforeTestRun()]
+		public void BeforeTestRun()
 		{
 
 		}
