@@ -1,6 +1,6 @@
 ﻿using TechTalk.SpecFlow;
 
-namespace SpecFlowExtension.FrameworkHooks
+namespace Optymus.SpecFlowExtension.FrameworkHooks
 {
 	public class FrameworkHooks
 	{
