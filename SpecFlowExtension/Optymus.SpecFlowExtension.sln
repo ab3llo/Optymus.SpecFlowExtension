@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optymus.SpecFlowExtension", "..\src\Optymus.SpecFlowExtension.csproj", "{D06346A7-1406-4D45-A4ED-4947897B292B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Optymus.SpecFlowExtension.Tests", "Optymus.SpecFlowExtension.Tests\Optymus.SpecFlowExtension.Tests.csproj", "{8C01AA1D-30BC-48C3-B87B-8C3C7E1483B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D06346A7-1406-4D45-A4ED-4947897B292B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D06346A7-1406-4D45-A4ED-4947897B292B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D06346A7-1406-4D45-A4ED-4947897B292B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D06346A7-1406-4D45-A4ED-4947897B292B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C01AA1D-30BC-48C3-B87B-8C3C7E1483B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C01AA1D-30BC-48C3-B87B-8C3C7E1483B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C01AA1D-30BC-48C3-B87B-8C3C7E1483B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C01AA1D-30BC-48C3-B87B-8C3C7E1483B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

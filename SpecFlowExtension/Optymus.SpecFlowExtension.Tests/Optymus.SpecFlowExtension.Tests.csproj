@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netcoreapp2.1</TargetFramework>
+		<IsPackable>false</IsPackable>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
+	  <IntermediateOutputPath>obj\Debug\netcoreapp2.1</IntermediateOutputPath>
+	  <DebugSymbols>true</DebugSymbols>
+	  <Optimize>false</Optimize>
+	  <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP2_1</DefineConstants>
+	</PropertyGroup>
+	<ItemGroup>
+	  <None Remove="App.Local.config" />
+	  <None Remove="App.config" />
+	</ItemGroup>
+	<ItemGroup>
+		<None Include="App.config">
+			<TransformOnBuild>true</TransformOnBuild>
+		</None>
+		<None Include="App.Local.config">
+			<DependentUpon>App.config</DependentUpon>
+			<IsTransformFile>True</IsTransformFile>
+		</None>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="nunit" Version="3.10.1" />
+		<PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
+		<PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.20" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\Optymus.SpecFlowExtension.csproj" />
+	</ItemGroup>
+</Project>
