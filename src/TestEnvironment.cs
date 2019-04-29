@@ -6,22 +6,25 @@ namespace Optymus.SpecFlowExtension
 	public class TestEnvironment : IEnvironment
 	{
 		public NameValueCollection configuration;
-		public static TestEnvironment Environment;
+		private static TestEnvironment environment;
 
 		private TestEnvironment()
 		{
-			if (configuration != null)
+			if (this.configuration != null)
 			{
-				configuration = ConfigurationManager.AppSettings;
+				this.configuration = ConfigurationManager.AppSettings;
 			}
 		}
 
 		static TestEnvironment() 
 		{
-			if (Environment == null)
+			if (environment == null)
 			{
-				Environment = new TestEnvironment();
+				environment = new TestEnvironment();
 			}
 		}
+
+		public static TestEnvironment GetEnvironment => environment;
+
 	}
 }

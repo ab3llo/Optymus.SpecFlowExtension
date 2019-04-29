@@ -1,4 +1,5 @@
 using System;
+using BoDi;
 using NUnit.Framework;
 using Optymus.SpecFlowExtension;
 using TechTalk.SpecFlow;
@@ -10,10 +11,10 @@ namespace Tests
 	{
 		private readonly FeatureContext featureContext;
 
-		public TestsSteps(FeatureContext featureContext)
+		public TestsSteps(FeatureContext featureContext, IObjectContainer objectContainer)
 		{
 			this.featureContext = featureContext;
-			Console.WriteLine(this.featureContext.Get<IEnvironment>());
+			Console.WriteLine(featureContext.Get<IEnvironment>());
 		}
 
 		[Given("I have entered (.*) into the calculator")]
