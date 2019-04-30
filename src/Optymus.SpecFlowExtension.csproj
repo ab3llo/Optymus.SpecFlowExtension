@@ -13,5 +13,15 @@
     <PackageReference Include="SpecFlow" Version="3.0.199" />
     <PackageReference Include="Unity" Version="5.10.3" />
     <PackageReference Include="NUnit" Version="3.10.1" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\tests\Optymus.SpecFlowExtension.Tests\App.config">
+      <Link>App.config</Link>
+    </None>
+    <None Include="..\tests\Optymus.SpecFlowExtension.Tests\App.Local.config">
+		<DependentUpon>App.config</DependentUpon>
+      <Link>App.Local.config</Link>
+    </None>
   </ItemGroup>
 </Project>

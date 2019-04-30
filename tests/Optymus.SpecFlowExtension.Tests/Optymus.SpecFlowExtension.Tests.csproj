@@ -33,6 +33,7 @@
 		<None Include="App.Local.config">
 			<DependentUpon>App.config</DependentUpon>
 			<IsTransformFile>True</IsTransformFile>
+			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
@@ -63,6 +64,9 @@
 	<ItemGroup>
 	  <Compile Update="EnvironmentConfiguration.feature.cs">
 	    <DependentUpon>EnvironmentConfiguration.feature</DependentUpon>
+	  </Compile>
+	  <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="FrameworkHooks.cs">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 	  </Compile>
 	</ItemGroup>
 	<ItemGroup>

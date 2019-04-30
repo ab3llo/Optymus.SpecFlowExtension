@@ -22,8 +22,8 @@ namespace Optymus.SpecFlowExtension
 
 		private static void InitConfig(TestEnvironment environment)
 		{
-			var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None).AppSettings;
-			environment.BaseUrl = configuration.Settings["BaseUrl"].Value;
+			var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+		//environment.BaseUrl = configuration["BaseUrl"].Value;
 
 		}
 
