@@ -40,9 +40,7 @@
 		<PackageReference Include="NUnit3TestAdapter" Version="3.10.0" />
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.8.0" />
 		<PackageReference Include="Microsoft.VisualStudio.SlowCheetah" Version="3.2.20" />
-	</ItemGroup>
-	<ItemGroup>
-	  <ProjectReference Include="..\..\src\Optymus.SpecFlowExtension.csproj" />
+		<PackageReference Include="SpecFlow" Version="3.0.199" />
 	</ItemGroup>
 	<ItemGroup>
 	  <None Update="EnvironmentConfiguration.feature">
@@ -66,5 +64,8 @@
 	  <Compile Update="EnvironmentConfiguration.feature.cs">
 	    <DependentUpon>EnvironmentConfiguration.feature</DependentUpon>
 	  </Compile>
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\..\src\Optymus.SpecFlowExtension.csproj" />
 	</ItemGroup>
 </Project>

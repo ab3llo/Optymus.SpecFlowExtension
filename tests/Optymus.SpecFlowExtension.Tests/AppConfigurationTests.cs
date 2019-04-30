@@ -1,5 +1,7 @@
 using System;
 using TechTalk.SpecFlow;
+using Optymus.SpecFlowExtension.Configuration;
+using Optymus.SpecFlowExtension;
 
 namespace Optymus.SpecFlowExtension.Tests
 {
@@ -7,13 +9,13 @@ namespace Optymus.SpecFlowExtension.Tests
 	public class AppConfigurationTests
 	{
 		private readonly FeatureContext featureContext;
-		private readonly IEnvironment environment;
+
+		public IEnvironment Environment { get; }
 
 		public AppConfigurationTests(FeatureContext featureContext, IEnvironment environment)
 		{
 			this.featureContext = featureContext;
-			this.environment = environment;
-			Console.WriteLine(this.environment);
+			Environment = environment;
 		}
 
 		[Given("I have entered (.*) into the calculator")]

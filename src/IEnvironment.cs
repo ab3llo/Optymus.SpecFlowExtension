@@ -1,8 +1,7 @@
-﻿namespace Optymus.SpecFlowExtension
+﻿namespace Optymus.SpecFlowExtension.Configuration
 {
 	public interface IEnvironment
 	{
 		string BaseUrl { get; }
-
 	}
 }
