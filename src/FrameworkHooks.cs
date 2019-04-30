@@ -1,4 +1,5 @@
-﻿using BoDi;
+﻿using System;
+using BoDi;
 using TechTalk.SpecFlow;
 
 namespace Optymus.SpecFlowExtension.FrameworkHooks
@@ -7,20 +8,20 @@ namespace Optymus.SpecFlowExtension.FrameworkHooks
 	public class FrameworkHooks
 	{
 		private readonly IObjectContainer objectContainer;
-		private readonly ScenarioContext _scenarioContext;
 		private readonly FeatureContext featureContext;
+		private readonly IEnvironment environment;
 
-		public FrameworkHooks(FeatureContext featureContext)
+		public FrameworkHooks(IObjectContainer objectContainer)
 		{
-			this.featureContext = featureContext;
+			this.objectContainer = objectContainer;
+			this.environment = TestEnvironment.Current;
+			this.objectContainer.RegisterInstanceAs<IEnvironment>(this.environment);
 		}
 
 		[BeforeFeature()]
-		public void BeforeTestRun()
+		public static void BeforeTestRun()
 		{
-			IEnvironment environment = TestEnvironment.GetEnvironment;
-			this.featureContext.Set(environment);
-			objectContainer.RegisterInstanceAs<IEnvironment>(environment);
+			Console.WriteLine("Hello");
 		}
 
 		[BeforeScenario(Order = 0)]

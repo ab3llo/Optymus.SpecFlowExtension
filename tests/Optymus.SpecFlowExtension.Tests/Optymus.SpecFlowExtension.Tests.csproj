@@ -4,18 +4,27 @@
 		<TargetFramework>netcoreapp2.1</TargetFramework>
 		<IsPackable>false</IsPackable>
 	</PropertyGroup>
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' " />
-	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " />
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Test|AnyCPU' ">
 	  <IntermediateOutputPath>obj\Debug\netcoreapp2.1</IntermediateOutputPath>
 	  <DebugSymbols>true</DebugSymbols>
 	  <Optimize>false</Optimize>
+	  <DefineConstants>TRACE;DEBUG;TEST;NETCOREAPP;NETCOREAPP2_1</DefineConstants>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Local|AnyCPU' ">
+	  <IntermediateOutputPath>obj\Debug\netcoreapp2.1</IntermediateOutputPath>
+	  <DebugSymbols>true</DebugSymbols>
+	  <DebugType>portable</DebugType>
+	  <Optimize>false</Optimize>
+	  <OutputPath>bin\Local\netcoreapp2.1</OutputPath>
 	  <DefineConstants>TRACE;DEBUG;NETCOREAPP;NETCOREAPP2_1</DefineConstants>
+	  <WarningLevel>4</WarningLevel>
+	  <DocumentationFile></DocumentationFile>
+	  <NoWarn>1701;1702</NoWarn>
+	  <NoStdLib>true</NoStdLib>
 	</PropertyGroup>
 	<ItemGroup>
 	  <None Remove="App.Local.config" />
 	  <None Remove="App.config" />
-	  <None Remove="EnvironmentConfiguration.feature" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Include="App.config">
@@ -40,12 +49,18 @@
 	    <Generator>SpecFlowSingleFileGenerator</Generator>
 	    <LastGenOutput>EnvironmentConfiguration.feature.cs</LastGenOutput>
 	  </None>
-	</ItemGroup>
-	<ItemGroup>
-	  <EmbeddedResource Include="EnvironmentConfiguration.feature">
+	  <None Update="EnvironmentConfiguration.feature">
 	    <Generator>SpecFlowSingleFileGenerator</Generator>
 	    <LastGenOutput>EnvironmentConfiguration.feature.cs</LastGenOutput>
-	  </EmbeddedResource>
+	  </None>
+	  <None Update="EnvironmentConfiguration.feature">
+	    <Generator>SpecFlowSingleFileGenerator</Generator>
+	    <LastGenOutput>EnvironmentConfiguration.feature.cs</LastGenOutput>
+	  </None>
+	  <None Update="EnvironmentConfiguration.feature">
+	    <Generator>SpecFlowSingleFileGenerator</Generator>
+	    <LastGenOutput>EnvironmentConfiguration.feature.cs</LastGenOutput>
+	  </None>
 	</ItemGroup>
 	<ItemGroup>
 	  <Compile Update="EnvironmentConfiguration.feature.cs">

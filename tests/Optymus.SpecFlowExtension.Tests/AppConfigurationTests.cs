@@ -1,20 +1,19 @@
 using System;
-using BoDi;
-using NUnit.Framework;
-using Optymus.SpecFlowExtension;
 using TechTalk.SpecFlow;
 
-namespace Tests
+namespace Optymus.SpecFlowExtension.Tests
 {
 	[Binding]
-	public class TestsSteps
+	public class AppConfigurationTests
 	{
 		private readonly FeatureContext featureContext;
+		private readonly IEnvironment environment;
 
-		public TestsSteps(FeatureContext featureContext, IObjectContainer objectContainer)
+		public AppConfigurationTests(FeatureContext featureContext, IEnvironment environment)
 		{
 			this.featureContext = featureContext;
-			Console.WriteLine(featureContext.Get<IEnvironment>());
+			this.environment = environment;
+			Console.WriteLine(this.environment);
 		}
 
 		[Given("I have entered (.*) into the calculator")]
