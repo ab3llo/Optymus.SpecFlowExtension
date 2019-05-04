@@ -1,5 +1,6 @@
 ﻿using System.Collections.Specialized;
 using System.Configuration;
+using System.Reflection;
 using Optymus.SpecFlowExtension.Configuration;
 
 namespace Optymus.SpecFlowExtension
@@ -22,8 +23,13 @@ namespace Optymus.SpecFlowExtension
 
 		private static void InitConfig(TestEnvironment environment)
 		{
-			var configuration = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
-		//environment.BaseUrl = configuration["BaseUrl"].Value;
+			ExeConfigurationFileMap configFileMap = new ExeConfigurationFileMap
+			{
+				ExeConfigFilename = Assembly.GetExecutingAssembly().ManifestModule.Name + ".config"
+			};
+
+			var configuration = ConfigurationManager.OpenMappedExeConfiguration(configFileMap,ConfigurationUserLevel.None);
+			environment.BaseUrl = configuration.AppSettings.Settings["BaseUrl"].Value;
 
 		}
 
