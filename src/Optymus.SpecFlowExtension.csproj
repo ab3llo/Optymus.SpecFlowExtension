@@ -16,12 +16,14 @@
 	<ItemGroup>
 		<None Include="App.config">
 			<TransformOnBuild>true</TransformOnBuild>
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<IncludeInPackage>true</IncludeInPackage>
 		</None>
 		<None Include="App.Local.config">
 			<DependentUpon>App.config</DependentUpon>
 			<IsTransformFile>True</IsTransformFile>
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<IncludeInPackage>true</IncludeInPackage>
 		</None>
 	</ItemGroup>
 	<ItemGroup>
