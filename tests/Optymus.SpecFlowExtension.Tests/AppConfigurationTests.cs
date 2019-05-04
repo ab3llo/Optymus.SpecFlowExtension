@@ -1,36 +1,32 @@
-using System;
 using TechTalk.SpecFlow;
 using Optymus.SpecFlowExtension.Configuration;
-using Optymus.SpecFlowExtension;
+using NUnit.Framework;
 
 namespace Optymus.SpecFlowExtension.Tests
 {
 	[Binding]
 	public class AppConfigurationTests
 	{
-		private readonly FeatureContext featureContext;
+		public IEnvironment TestEnvironment { get; }
 
-		public IEnvironment Environment { get; }
-
-		public AppConfigurationTests(FeatureContext featureContext, IEnvironment environment)
+		public AppConfigurationTests(IEnvironment environment)
 		{
-			this.featureContext = featureContext;
-			Environment = environment;
+			TestEnvironment = environment;
 		}
 
-		[Given("I have entered (.*) into the calculator")]
-		public void GivenIHaveEnteredSomethingIntoTheCalculator(int number)
-		{
-		}
 
-		[When("I press add")]
-		public void WhenIPressAdd()
+		[Then("correct configuration is loaded")]
+		public void ThenTheResultShouldBe(Table table)
 		{
-		}
+			foreach (TableRow row in table.Rows)
+			{
+				string expectedValue = string.Empty;
 
-		[Then("the result should be (.*) on the screen")]
-		public void ThenTheResultShouldBe(int result)
-		{
+				if (row.TryGetValue("BaseUrl", out expectedValue))
+				{
+					Assert.That(TestEnvironment.BaseUrl, Is.EqualTo(expectedValue), $"The environment BaseUrl {TestEnvironment.BaseUrl} did not match the expected value {expectedValue}");
+				}
+			}
 		}
 	}
 }

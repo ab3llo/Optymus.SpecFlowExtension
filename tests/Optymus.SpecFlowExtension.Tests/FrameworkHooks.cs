@@ -10,11 +10,15 @@ namespace Optymus.SpecFlowExtension
 	{
 		private readonly IObjectContainer container;
 		private readonly IEnvironment environment;
+		private readonly DataContext dataContext;
+		public DataContext Current;
 
 		public FrameworkHooks(IObjectContainer container)
 		{
 			this.container = container;
 			this.environment = TestEnvironment.Current;
+			this.dataContext = new DataContext();
+			Current = this.dataContext;
 
 			container.RegisterInstanceAs<IEnvironment>(this.environment);
 		}
