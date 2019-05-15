@@ -6,5 +6,5 @@
 
 Scenario: Check localhost app config is loaded
 	Then correct configuration is loaded
-	| Key     | Value     			  |
+	| Key     | Value     		  |
 	| BaseUrl | http://localhost:5000 |
